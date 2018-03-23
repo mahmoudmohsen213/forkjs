@@ -120,7 +120,7 @@ fork
 fork
   .join()
   .then(args => {
-  console.log('fork end event:');
+    console.log('fork end event:');
     console.log(args);
   });
 ```
