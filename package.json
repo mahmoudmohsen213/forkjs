@@ -1,0 +1,27 @@
+{
+  "name": "@mahmoudmohsen213/forkjs",
+  "version": "1.0.0",
+  "description": "A light weight node module that tracks a collection of async calls, and notify the main caller when all of them are done through the provided 'then' handler passed to the promise returned from the join method, and forward the arguments passed to the callbacks by the observed calls. The only requirement is that the provided async calls accept a callback as their last parameter. Note: if an async call invoke its callback more than once, the parameters passed to the last invocation will overwrite the previous ones",
+  "main": "fork.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "async",
+    "asynchronous",
+    "observer",
+    "fork",
+    "join",
+    "merge"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmoudmohsen213/forkjs.git"
+  },
+  "author": "mahmoudmohsen213 (https://github.com/mahmoudmohsen213)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mahmoudmohsen213/forkjs/issues"
+  },
+  "homepage": "https://github.com/mahmoudmohsen213/forkjs#readme"
+}
