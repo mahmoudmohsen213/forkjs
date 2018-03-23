@@ -4,10 +4,15 @@ A light weight node module that tracks a collection of async calls, and notify t
 ## Use case:
 This module works for fork-join situations, when we have a number of asynchronous functions, which will be called one after the other and executed asynchronously but we want to collect the returned values provided through callbacks from all functions, and use them all together.
 
+## Installation:
+```
+npm install @mahmoudmohsen213/forkjs
+```
+
 ## Usage:
 The module exports a constructor function which can be used to create new instances of the object
 ```js
-var Fork = require('fork');
+var Fork = require('@mahmoudmohsen213/forkjs');
 var fork1 = new Fork();
 var fork2 = new Fork();
 ```
@@ -62,6 +67,11 @@ function test3Callback(param1, param2){
 
 fork1.forkWithCallback(test3, test3Callback, 'test3param5', 'test3param6');
 ```
+#### .remove(index, number)
+Removes one or more previously added function. The 'index' is the start index (inclusive, the object at index will be removed), 'number' the number of entries to remove starting from 'index'.
+```js
+fork1.remove(2, 5);
+```
 #### .join()
 Calling this function will invoke all the added asynchronous functions. Any attempt to call .join() again will result in an error until all observed calls finishes and call their callbacks.
 
@@ -79,7 +89,7 @@ fork1
 
 ## Full code sample:
 ```js
-var Fork = require('fork');
+var Fork = require('@mahmoudmohsen213/forkjs');
 var fork = new Fork();
 
 function test1(param1, param2, callback){
