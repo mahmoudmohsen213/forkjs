@@ -75,7 +75,7 @@ fork1.remove(2, 5);
 #### .join()
 Calling this function will invoke all the added asynchronous functions. Any attempt to call .join() again will result in an error until all observed calls finishes and call their callbacks.
 
-This function returns a promise, which is resolved wfter all functions call their callbacks, the promise is resolved with the collected callback arguments, passed by the observed asynchronous functions to their callbacks.
+This function returns a promise, which is resolved after all functions call their callbacks, the promise is resolved with the collected callback arguments, passed by the observed asynchronous functions to their callbacks.
 
 The 'then' handler should take one argument which is an array of arrays, the i-th array is a collection of the arguments passed to the callback by i-th observed call in the order of addition.
 ```js
