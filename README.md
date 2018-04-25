@@ -1,5 +1,7 @@
 # forkjs
-A light weight node module that tracks a collection of async calls, and notify the main caller when all of them are done through the provided 'then' handler passed to the promise returned from the join method, and forward the arguments passed to the callbacks by the observed calls. The only requirement is that the provided async calls accept a callback as their last parameter. Note: if an async call invoke its callback more than once, the parameters passed to the last invocation will overwrite the previous ones.
+A lightweight node module that tracks a collection of async calls, and notify the main caller when all of them are done through the provided 'then' handler passed to the promise returned from the join method, and forward the arguments passed to the callbacks by the observed calls.
+
+The only requirement is that the provided async calls accept a callback as their last parameter. Note: if an async call invoke its callback more than once, the parameters passed to the last invocation will overwrite the previous ones.
 
 ## Use case:
 This module works for fork-join situations, when we have a number of asynchronous functions, which will be called one after the other and executed asynchronously but we want to collect the returned values provided through callbacks from all functions, and use them all together.
@@ -134,3 +136,6 @@ fork
     console.log(args);
   });
 ```
+
+## See also
+- [pooljs](https://www.npmjs.com/package/@mahmoudmohsen213/pooljs) A lightweight async tasks queue with variable pool size.
